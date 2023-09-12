@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}driveBis{% endblock %}
+
+{% block body %}
+    {% if directories %}
+    {% for directory in directories %}
+        <h1><img src="../../src/images/folder.png" alt="{{ directory.name }}" >{{ directory.name }}</h1>
+    {% endfor %}
+    {% else %}
+    <h2>Pas de dossier</h2>
+    <a href="{{ path('app_directory_createdirectory') }}" class="btn btn-primary">En créer un?</a>
+    {% endif %}
+{% endblock %}
